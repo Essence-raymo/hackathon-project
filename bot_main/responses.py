@@ -1,3 +1,4 @@
+import re
 from random import choice, randint
 
 
@@ -30,11 +31,23 @@ def manual() -> str:
 
 # creating bot responses
 def get_response(user_input: str) -> str:
+    #checks the number of catagorizes sent
     lowered: str = user_input.lower()
-    
-    if lowered == '':
-        return 'Well, you are awfully silent...'
+    if vaild_entry(lowered):
+        return "Thank you for your response it is being processed now"
+    elif lowered == '':
+        return "Well, you are awfully silent..."
     elif 'hello' in lowered:
-        return 'Hello There!'
+        return "Hello There!"
     else:
-        return 'SAY SOMETHING'
+        return "Something's not right with your entry check it and try again"
+    
+def vaild_entry(str):
+    entry = str
+    regexp = "languages: .+; skill level: .+; areas of interest: .+; time zone: .+" #regular exspression
+    match = re.match(regexp, entry)
+    if match:
+        return True
+    else: 
+        return False
+        
