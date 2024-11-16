@@ -1,0 +1,47 @@
+[
+    {
+        "Username": "testing",
+        "Languages": [
+            " python",
+            " javascript",
+            " c++"
+        ],
+        "skill level": "intermediate",
+        "areas of interest": [
+            " web development",
+            " ai",
+            " game development"
+        ],
+        "time zone": " est"
+    },
+    {
+        "Username": "testing2",
+        "Languages": [
+            " python",
+            " javascript",
+            " c++"
+        ],
+        "skill level": "intermediate",
+        "areas of interest": [
+            " web development",
+            " ai",
+            " game development"
+        ],
+        "time zone": " est"
+    },
+    {
+        "Username": "testing3",
+        "Languages": [
+            " python",
+            " javascript",
+            " c++"
+        ],
+        "skill level": "intermediate",
+        "areas of interest": [
+            " web development",
+            " ai",
+            " game development"
+        ],
+        "time zone": " est"
+    }
+]
