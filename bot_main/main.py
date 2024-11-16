@@ -4,8 +4,9 @@ import os  # lets us access environment variables
 from discord import Intents, Client, Message  # discord library for building the bot
 from dotenv import load_dotenv  # helps load environment variables from a .env file
 from responses import get_response  # custom function to get a response for a user message
+from responses import manual
 
-# this loads environment variables from a .env file so we can use them in our program
+#  loads token from a .env file so we can use them in our program
 load_dotenv()
 
 # getting the discord token from the .env file to authenticate our bot
@@ -17,6 +18,8 @@ intents: Intents = Intents.default()  # use default intents for the bot
 intents.message_content = True  # allow the bot to read message content
 # creating the bot client with the specified intents
 client: Client = Client(intents=intents)
+
+
 
 # STEP 2: MESSAGE FUNCTIONALITY
 # this function will send a response to a user based on their message
@@ -69,6 +72,17 @@ async def on_message(message: Message) -> None:
     print(f'[{channel}] {username}: "{user_message}"')
     # process the message and send a response
     await send_message(message, user_message)
+    
+# this function will send a message each time the bot joins a server
+# the message will contain instructions on HOW to use the bot
+@client.event
+async def on_guild_join(guild):
+    response: str = manual()  # response = initial message
+    # iterate through servers
+    for channel in guild.text_channels:
+        if channel.permissions_for(guild.me).send_messages:
+            await channel.send(response)  # send intial message to the channel
+        break
     
 # STEP 5: MAIN ENTRY POINT
 # this function starts the bot
