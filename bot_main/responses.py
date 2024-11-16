@@ -1,4 +1,5 @@
 import re
+from discord import Embed
 from random import choice, randint
 
 
@@ -8,25 +9,25 @@ def register_user() -> str:
 
 # intial message that bot will send once it joins a server
 def manual() -> str:
-      
-      return """**Please enter your skills in the format below to register your profile!**
+    embed = Embed (
+        title= "Welcome to MatchMaking Bot! 🎉",
+        description= ("Thank you for joining! Here's how to get started:\n\n"
+                     "For your profile you will be entering: \n"
+                     " __**Languages**__: [list the programming languages you know, separated by commas]; \n"
 
-        **Format:**
-        Languages: [list the programming languages you know, separated by commas];
-        Skill Level: [your skill level: Beginner, Intermediate, or Advanced];
-        Areas of Interest: [list your interests, separated by commas];
-        Time Zone: [your time zone, e.g., EST, PST, GMT+2]; 
-        Availability: [general days/times you're available, e.g., Weekdays after 6 PM]; 
+                     " __**Skill Level**__: [Your skill level: Beginner, Intermediate, or Advanced];\n"
 
+                     " __**Areas of Interest**__: [List your interests, separated by commas];\n"
 
+                     " __**Time Zone**__: [Your time zone, e.g., EST, PST, GMT+2];\n \n \n" 
+                     "__**Answer in this format exactly, put all in one line.**__ \n" 
+                     "Languages: Python, JavaScript, C++; Skill Level: Intermediate; Areas of Interest: Web Development, AI, Game Development; Time Zone: EST;"),
 
-        **Example:**
-        Languages: Python, JavaScript, C++; Skill Level: Intermediate; 
-        Areas of Interest: Web Development, AI, Game Development; 
-        Time Zone: EST; Availability: 
-        Weekdays after 6 PM, Weekends flexible
+    
+        color= 0x2F3136
+        ) 
 
-        """
+    return (embed)
 
 
 # creating bot responses
