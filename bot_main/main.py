@@ -5,6 +5,7 @@ from discord import Intents, Client, Message  # discord library for building the
 from dotenv import load_dotenv  # helps load environment variables from a .env file
 from responses import get_response  # custom function to get a response for a user message
 from responses import manual
+from helper import *
 
 #  loads token from a .env file so we can use them in our program
 load_dotenv()
@@ -72,7 +73,7 @@ async def on_message(message: Message) -> None:
     print(f'[{channel}] {username}: "{user_message}"')
     # process the message and send a response
     await send_message(message, user_message)
-    
+
 # this function will send a message each time the bot joins a server
 # the message will contain instructions on HOW to use the bot
 @client.event
@@ -83,7 +84,17 @@ async def on_guild_join(guild):
         if channel.permissions_for(guild.me).send_messages:
             await channel.send(response)  # send intial message to the channel
         break
-    
+
+@client.event
+async def on_member_join(member):
+    response: str = manual()
+    try:
+        print(f'{member} has joined a server.')
+        await member.send(embed=response)
+
+    except Exception as e:
+        print(f"Error: {e}")
+
 # STEP 5: MAIN ENTRY POINT
 # this function starts the bot
 def main() -> None:
@@ -95,3 +106,4 @@ def main() -> None:
 if __name__ == '__main__':
     # if it is, call the main function to start the bot
     main()
+
