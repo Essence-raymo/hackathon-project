@@ -1,5 +1,65 @@
 [
     {
+        "Username": "Peach",
+        "Languages": [
+            " rust",
+            " javascript",
+            " c++"
+        ],
+        "skill level": "intermediate",
+        "areas of interest": [
+            " web development",
+            " ai",
+            " game development"
+        ],
+        "time zone": " est"
+    },
+    {
+        "Username": "Jason",
+        "Languages": [
+            " go",
+            " javascript",
+            " c++"
+        ],
+        "skill level": "intermediate",
+        "areas of interest": [
+            " web development",
+            " ai",
+            " game development"
+        ],
+        "time zone": " est"
+    },
+    {
+        "Username": "Austin",
+        "Languages": [
+            " python",
+            " golang",
+            " c#"
+        ],
+        "skill level": "intermediate",
+        "areas of interest": [
+            " web development",
+            " ai",
+            " game development"
+        ],
+        "time zone": " est"
+    },
+    {
+        "Username": "testing3",
+        "Languages": [
+            " python",
+            " javascript",
+            " c++"
+        ],
+        "skill level": "intermediate",
+        "areas of interest": [
+            " web development",
+            " ai",
+            " game development"
+        ],
+        "time zone": " est"
+    },
+    {
         "Username": "testing",
         "Languages": [
             " python",
@@ -30,7 +90,7 @@
         "time zone": " est"
     },
     {
-        "Username": "testing3",
+        "Username": "exxeno",
         "Languages": [
             " python",
             " javascript",
@@ -41,6 +101,34 @@
             " web development",
             " ai",
             " game development"
+        ],
+        "time zone": " est"
+    },
+    {
+        "Username": "kunzynskee",
+        "Languages": [
+            " java",
+            " c++"
+        ],
+        "skill level": "beginner",
+        "areas of interest": [
+            " front-end",
+            " ai",
+            " machine learning"
+        ],
+        "time zone": " est"
+    },
+    {
+        "Username": "pineapplesarelowkeybad",
+        "Languages": [
+            " java",
+            " c++"
+        ],
+        "skill level": "beginner",
+        "areas of interest": [
+            " front-end",
+            " ai",
+            " machine learning"
         ],
         "time zone": " est"
     }
