@@ -1,7 +1,7 @@
 import re
 from discord import Embed
 from random import choice, randint
-
+from main import *
 
 # we will add users to a database to create a "profile" for them based on their input
 def register_user() -> str:
@@ -34,6 +34,7 @@ def manual() -> str:
 def get_response(user_input: str) -> str:
     #checks the number of catagorizes sent
     lowered: str = user_input.lower()
+    #if message is valid, return a  nice message 
     if vaild_entry(lowered):
         return "Thank you for your response it is being processed now"
     elif lowered == '':
@@ -42,9 +43,12 @@ def get_response(user_input: str) -> str:
         return "Hello There!"
     else:
         return "Something's not right with your entry check it and try again"
-    
+
+# validates the user message
 def vaild_entry(str):
-    entry = str
+    # lowers message
+    entry = str.lower()
+    # regular expression to check formatting
     regexp = "languages: .+; skill level: .+; areas of interest: .+; time zone: .+" #regular exspression
     match = re.match(regexp, entry)
     if match:
