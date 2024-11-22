@@ -1,6 +1,7 @@
 # hackathon-project
 Clarkson University's Girls Who Code are participating in their first hackathon. LETS CODE!!!!
 
+FYI: The API keys in this repository are dummy keys. 
 **REQUIREMENTS**
 
 Python3 version requirement – must be at least Python3.6 but under Python3.13. We used version Python3.12.7.
